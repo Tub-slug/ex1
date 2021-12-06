@@ -1,59 +1,20 @@
 input.onButtonPressed(Button.A, function () {
-    basic.showLeds(`
-        . . . . .
-        . . . . .
-        . . # . .
-        . . . . .
-        . . . . .
-        `)
-    basic.pause(100)
-    basic.showLeds(`
-        . . . . .
-        . # . # .
-        . . # . .
-        . # . # .
-        . . . . .
-        `)
-    basic.pause(100)
-    basic.showLeds(`
-        # . . . #
-        . # . # .
-        . . # . .
-        . # . # .
-        # . . . #
-        `)
-    basic.pause(100)
-    basic.showLeds(`
-        # . # . #
-        . # # # .
-        # # # # #
-        . # # # .
-        # . # . #
-        `)
-    basic.pause(100)
-    basic.showLeds(`
-        . . . . .
-        . . . . .
-        . . . . .
-        . . . . .
-        . . . . .
-        `)
+    if (x == 1) {
+        basic.showIcon(IconNames.Yes)
+    } else {
+        basic.showIcon(IconNames.No)
+    }
 })
 input.onButtonPressed(Button.AB, function () {
-    for (let index = 0; index < 5; index++) {
-        basic.showIcon(IconNames.SmallHeart)
-        basic.pause(100)
-        basic.showIcon(IconNames.Heart)
-        basic.pause(100)
-    }
-    basic.showLeds(`
-        . . . . .
-        . . . . .
-        . . . . .
-        . . . . .
-        . . . . .
-        `)
+    basic.showString("" + (x))
 })
 input.onButtonPressed(Button.B, function () {
-    basic.showString("UPS")
+    if (x == 2) {
+        basic.showIcon(IconNames.Yes)
+    } else {
+        basic.showIcon(IconNames.No)
+    }
 })
+let x = 0
+basic.showString("GUESS A NUM, EITHER 1A OR 2B")
+x = randint(1, 2)
